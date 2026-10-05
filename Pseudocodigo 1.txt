@@ -1,0 +1,50 @@
+Inicio
+	
+num = 1
+und = 0
+undcomp = 0
+desc = 0
+impfin = 0
+und_fin = 0
+salir = False
+impfin = impfin + (num * und)
+und_fin = und_fin + und
+
+
+	Mientras salir = False entonces
+		Escribe "Introduce el precio unitario en euros (0 para terminar):"
+		lee num
+		
+		Si precio == 0
+			salir = True
+		Sino
+			Si num < 0
+				Escribe "El precio no puede ser negativo"
+			Sino
+				Mientras und <= -1
+				Escribe "Introduce el número de unidades:"
+				lee und
+				Si und <= 0
+					Escribe "La cantidad debe ser mayor que 0"
+				Sino
+					impfin = impfin + (num * und)
+					und_fin = und_fin + und		
+
+		
+Si impfin == 0 entonces
+	Escribe "No se han registrado productos"
+Sino
+	Si impfin < 50
+	desc = 0
+Sino
+	Si impfin < 100
+	desc = 0.5
+Sino
+	Si impfin > 100
+	desc = 10
+Escribe	"RESUMEN DE LA COMPRA"
+"Unidades compradas:" 5
+Importe antes del descuento: 70 euros
+Descuento aplicado: 5 %
+Descuento: 3.5 euros
+Importe final: 66.5 euros
